@@ -6,15 +6,24 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemeViewController: UIViewController {
 
+    var memeViewModel: MemeViewModel = .init()
+    
+    @IBOutlet weak var posterUserImageView: UIImageView!
+    @IBOutlet weak var greetings: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureUser()
     }
     
+    func configureUser() {
+        posterUserImageView.kf.setImage(with: memeViewModel.getUserImage)
+        greetings.text = memeViewModel.getUserName
+    }
 
     /*
     // MARK: - Navigation

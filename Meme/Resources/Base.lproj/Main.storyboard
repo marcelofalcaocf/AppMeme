@@ -200,6 +200,10 @@
                     <tabBarItem key="tabBarItem" title="Meme" image="flokiAppMeme-1" id="soc-Nc-4Yl">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="greetings" destination="sew-RF-ivh" id="XRO-Yw-vp2"/>
+                        <outlet property="posterUserImageView" destination="mSd-im-cqn" id="NHo-Ek-S8z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rX8-XX-9gO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,6 +225,9 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="iphone.and.arrow.forward" catalog="system" title="Logout"/>
+                                        <connections>
+                                            <action selector="logoutButtonAction:" destination="jqB-i9-8EX" eventType="touchUpInside" id="XxE-UI-Amn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -277,7 +284,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="gg7-Gz-S2r">
             <objects>
-                <tabBarController id="gdH-lN-Fc2" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="DescriptionMemeAndLogin" id="gdH-lN-Fc2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="s6F-m1-DY5"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZI2-q9-0Ri">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -297,7 +304,7 @@
         <!--Navigation Controller-->
         <scene sceneID="Ydx-jX-mfc">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wpL-2I-Kh1" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginMemeViewController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wpL-2I-Kh1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="n2G-CD-0lH">

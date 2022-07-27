@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -13,12 +14,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        window = UIWindow(windowScene: windowScene)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let countLogged = Auth.auth().currentUser
+        
+        if countLogged != nil {
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "DescriptionMemeAndLogin")
+            
+            window?.rootViewController = tabBarController
+            window?.makeKeyAndVisible()
+        } else {
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginMemeViewController")
+            
+            window?.rootViewController = loginViewController
+            window?.makeKeyAndVisible()
+        }
     }
 
+    func setRootViewController(view: UIViewController) {
+        guard let window = window else { return }
+        
+        window.rootViewController = view
+        
+        UIView.transition(
+            with: window,
+            duration: 0.8,
+            options: .transitionFlipFromTop,
+            animations: nil,
+            completion: nil)
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

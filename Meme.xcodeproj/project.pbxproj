@@ -20,6 +20,8 @@
 		140BBDA4289088E5006F58ED /* MemeDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140BBDA3289088E5006F58ED /* MemeDescriptionCollectionViewCell.swift */; };
 		140BBDAB289089F9006F58ED /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140BBDAA289089F9006F58ED /* LoginService.swift */; };
 		140BBDAD28908A06006F58ED /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140BBDAC28908A06006F58ED /* LoginViewModel.swift */; };
+		14C9C8812891C64400BD78AB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C8802891C64400BD78AB /* UserViewModel.swift */; };
+		14C9C8832891CAB400BD78AB /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C8822891CAB400BD78AB /* MemeViewModel.swift */; };
 		E54A926F679C6CB94D595CDF /* Pods_Meme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9866BB39488228DF9AABEFB6 /* Pods_Meme.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		140BBDA3289088E5006F58ED /* MemeDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		140BBDAA289089F9006F58ED /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 		140BBDAC28908A06006F58ED /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		14C9C8802891C64400BD78AB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		14C9C8822891CAB400BD78AB /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
 		21F8A5C9EA01EAEAE2D986DF /* Pods-Meme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme.release.xcconfig"; path = "Target Support Files/Pods-Meme/Pods-Meme.release.xcconfig"; sourceTree = "<group>"; };
 		9866BB39488228DF9AABEFB6 /* Pods_Meme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89DA9302DA6506898CC56CA /* Pods-Meme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme.debug.xcconfig"; path = "Target Support Files/Pods-Meme/Pods-Meme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				140BBDAC28908A06006F58ED /* LoginViewModel.swift */,
+				14C9C8802891C64400BD78AB /* UserViewModel.swift */,
+				14C9C8822891CAB400BD78AB /* MemeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 				140BBD8B28906752006F58ED /* LoginViewController.swift in Sources */,
 				140BBDA22890889C006F58ED /* UserViewController.swift in Sources */,
 				140BBDA02890888E006F58ED /* MemeViewController.swift in Sources */,
+				14C9C8812891C64400BD78AB /* UserViewModel.swift in Sources */,
+				14C9C8832891CAB400BD78AB /* MemeViewModel.swift in Sources */,
 				140BBDA4289088E5006F58ED /* MemeDescriptionCollectionViewCell.swift in Sources */,
 				140BBD9128906752006F58ED /* Meme.xcdatamodeld in Sources */,
 				140BBD8728906752006F58ED /* AppDelegate.swift in Sources */,

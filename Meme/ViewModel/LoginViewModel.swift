@@ -12,6 +12,8 @@ import FirebaseCore
 
 protocol LoginViewModelDelegate {
     func loginWithGoogle(_ configuration: GIDConfiguration)
+    func loginSuccess()
+    func loginError()
 }
 
 class LoginViewModel {
@@ -26,8 +28,9 @@ class LoginViewModel {
     }
     
     func handleGoogleSigIn(user: GIDGoogleUser?, error: Error?) { // tratar
-        if let error = error {
+        if error != nil {
             print(error)
+            delegate?.loginError()
             return
         }
         guard
@@ -41,6 +44,8 @@ class LoginViewModel {
                                                         accessToken: authentication.accessToken)
 
         loginService.toSaveOnFireBase(credential: credential)
+        
+        delegate?.loginSuccess()
     }
     
 }

@@ -9,21 +9,25 @@ import UIKit
 
 class UserViewController: UIViewController {
 
+    let userViewModel: UserViewModel = .init()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userViewModel.logoutDelegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutButtonAction(_ sender: Any) {
+        userViewModel.logout()
     }
-    */
+    
+}
 
+extension UserViewController: LogoutDelegate {
+    func logoutSuccess() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginMemeViewController")
+        
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.setRootViewController(view: loginViewController)
+    }
 }
