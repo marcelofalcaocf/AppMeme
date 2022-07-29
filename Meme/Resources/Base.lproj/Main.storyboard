@@ -176,6 +176,10 @@
                                                 <constraint firstItem="zCZ-gs-n2h" firstAttribute="leading" secondItem="eaf-eh-dyt" secondAttribute="leading" id="cAW-I1-2OJ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="memeImageView" destination="YQP-5q-U9T" id="Uo3-vC-Gdh"/>
+                                            <outlet property="nameMemeLabel" destination="t6W-9c-sJ0" id="3k6-cu-W6P"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -202,6 +206,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="greetings" destination="sew-RF-ivh" id="XRO-Yw-vp2"/>
+                        <outlet property="memeCollectionView" destination="4kD-wD-mpX" id="1Nv-4u-4Tj"/>
                         <outlet property="posterUserImageView" destination="mSd-im-cqn" id="NHo-Ek-S8z"/>
                     </connections>
                 </viewController>

@@ -22,6 +22,10 @@
 		140BBDAD28908A06006F58ED /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140BBDAC28908A06006F58ED /* LoginViewModel.swift */; };
 		14C9C8812891C64400BD78AB /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C8802891C64400BD78AB /* UserViewModel.swift */; };
 		14C9C8832891CAB400BD78AB /* MemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C9C8822891CAB400BD78AB /* MemeViewModel.swift */; };
+		14E8A83A28944E2E00622DC7 /* ApiMemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8A83928944E2E00622DC7 /* ApiMemeService.swift */; };
+		14E8A83D289450F600622DC7 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8A83C289450F600622DC7 /* Meme.swift */; };
+		14E8A83F289451EF00622DC7 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8A83E289451EF00622DC7 /* DataModel.swift */; };
+		14E8A841289452A300622DC7 /* MemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E8A840289452A300622DC7 /* MemeModel.swift */; };
 		E54A926F679C6CB94D595CDF /* Pods_Meme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9866BB39488228DF9AABEFB6 /* Pods_Meme.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +47,10 @@
 		140BBDAC28908A06006F58ED /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		14C9C8802891C64400BD78AB /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		14C9C8822891CAB400BD78AB /* MemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeViewModel.swift; sourceTree = "<group>"; };
+		14E8A83928944E2E00622DC7 /* ApiMemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiMemeService.swift; sourceTree = "<group>"; };
+		14E8A83C289450F600622DC7 /* Meme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
+		14E8A83E289451EF00622DC7 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		14E8A840289452A300622DC7 /* MemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeModel.swift; sourceTree = "<group>"; };
 		21F8A5C9EA01EAEAE2D986DF /* Pods-Meme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme.release.xcconfig"; path = "Target Support Files/Pods-Meme/Pods-Meme.release.xcconfig"; sourceTree = "<group>"; };
 		9866BB39488228DF9AABEFB6 /* Pods_Meme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Meme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89DA9302DA6506898CC56CA /* Pods-Meme.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Meme.debug.xcconfig"; path = "Target Support Files/Pods-Meme/Pods-Meme.debug.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +98,7 @@
 		140BBD8528906752006F58ED /* Meme */ = {
 			isa = PBXGroup;
 			children = (
+				14E8A83B289450D200622DC7 /* Model */,
 				140BBDA828908949006F58ED /* Utils */,
 				140BBDA728908914006F58ED /* ViewModel */,
 				140BBDA62890890D006F58ED /* Service */,
@@ -117,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				140BBDAA289089F9006F58ED /* LoginService.swift */,
+				14E8A83928944E2E00622DC7 /* ApiMemeService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -148,6 +158,16 @@
 				140BBD9428906755006F58ED /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		14E8A83B289450D200622DC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				14E8A83C289450F600622DC7 /* Meme.swift */,
+				14E8A83E289451EF00622DC7 /* DataModel.swift */,
+				14E8A840289452A300622DC7 /* MemeModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		19E6A943E232739787AF94A9 /* Frameworks */ = {
@@ -276,9 +296,13 @@
 			files = (
 				140BBD8B28906752006F58ED /* LoginViewController.swift in Sources */,
 				140BBDA22890889C006F58ED /* UserViewController.swift in Sources */,
+				14E8A83A28944E2E00622DC7 /* ApiMemeService.swift in Sources */,
+				14E8A83D289450F600622DC7 /* Meme.swift in Sources */,
+				14E8A841289452A300622DC7 /* MemeModel.swift in Sources */,
 				140BBDA02890888E006F58ED /* MemeViewController.swift in Sources */,
 				14C9C8812891C64400BD78AB /* UserViewModel.swift in Sources */,
 				14C9C8832891CAB400BD78AB /* MemeViewModel.swift in Sources */,
+				14E8A83F289451EF00622DC7 /* DataModel.swift in Sources */,
 				140BBDA4289088E5006F58ED /* MemeDescriptionCollectionViewCell.swift in Sources */,
 				140BBD9128906752006F58ED /* Meme.xcdatamodeld in Sources */,
 				140BBD8728906752006F58ED /* AppDelegate.swift in Sources */,

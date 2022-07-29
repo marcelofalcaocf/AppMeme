@@ -11,8 +11,10 @@ import FirebaseCore
 
 class MemeViewModel {
     
-    let user = Auth.auth().currentUser
-        
+    private let memeService: ApiMemeService = .init()
+    private let user = Auth.auth().currentUser
+    private var memeList: [Meme] = []
+    
     var getUserImage: URL? {
         guard let image = user?.photoURL else { return nil }
         return image
@@ -22,4 +24,21 @@ class MemeViewModel {
         guard let name = user?.displayName else {return nil}
         return "Boas vindas, \(name)!"
     }
+    
+    func getMemeService() {
+        memeService.getMeme { meme in
+            self.memeList = meme
+        }
+    }
+    
+    func getMemeListPosition() -> Int {
+        memeList.count
+    }
+    
+    func getMemeListName(position: Int) -> Meme {
+        let meme = memeList[position]
+        
+        return meme
+    }
 }
+

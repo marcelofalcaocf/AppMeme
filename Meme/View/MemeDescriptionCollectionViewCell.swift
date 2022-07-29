@@ -6,7 +6,15 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MemeDescriptionCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var memeImageView: UIImageView!
+    @IBOutlet weak var nameMemeLabel: UILabel!
+    
+    func configureCollectionView(meme: Meme) {
+        memeImageView.kf.setImage(with: meme.data.meme.url)
+        nameMemeLabel.text = meme.data.meme.name
+    }
 }

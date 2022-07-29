@@ -47,5 +47,4 @@ class LoginViewModel {
         
         delegate?.loginSuccess()
     }
-    
 }
