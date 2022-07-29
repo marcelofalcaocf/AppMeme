@@ -14,7 +14,7 @@ class MemeDescriptionCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nameMemeLabel: UILabel!
     
     func configureCollectionView(meme: Meme) {
-        memeImageView.kf.setImage(with: meme.data.meme.url)
-        nameMemeLabel.text = meme.data.meme.name
+        memeImageView.kf.setImage(with: meme.data.memes.url)
+        nameMemeLabel.text = meme.data.memes.name
     }
 }

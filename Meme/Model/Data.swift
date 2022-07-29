@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct dataMeme: Decodable {
-    let meme: MemeModel
+struct Data: Decodable {
+    let memes: Memes
 }

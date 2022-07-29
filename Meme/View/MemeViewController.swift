@@ -27,7 +27,6 @@ class MemeViewController: UIViewController {
         DispatchQueue.main.async {
             self.posterUserImageView.kf.setImage(with: self.memeViewModel.getUserImage)
             self.greetings.text = self.memeViewModel.getUserName
-            self.viewDidLoad()
         }
     }
     

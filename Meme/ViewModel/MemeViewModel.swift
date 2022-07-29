@@ -40,5 +40,11 @@ class MemeViewModel {
         
         return meme
     }
+    
+    func handlerUser(completion: @escaping (User?) -> Void) {
+        guard let user = user else { return }
+        
+        completion(user)
+    }
 }
 

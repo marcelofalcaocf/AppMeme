@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct MemeModel: Decodable {
-    let id: Int
+struct Memes: Decodable {
+    let id: String
     let name: String
-    let url: URL
+    let url: String
     let width: Int
     let height: Int
     let box_count: Int

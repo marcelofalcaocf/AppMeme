@@ -9,7 +9,7 @@ import Foundation
 
 struct Meme: Decodable {
     let success: Bool
-    let data: dataMeme
+    let data: Data
 }
 
 
