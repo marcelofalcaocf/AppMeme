@@ -24,18 +24,15 @@ class MemeViewController: UIViewController {
             self.configureUser()
         }
         
-        memeViewModel.getMemes {
-            DispatchQueue.main.async {
-                self.memeCollectionView.reloadData()
-            }
-        }
+        memeViewModel.getMemes()
         
         memeCollectionView.dataSource = self
+        memeViewModel.delegate = self
     }
     
     func configureUser() {
-            self.posterUserImageView.kf.setImage(with: self.memeViewModel.getUserImage)
-            self.greetings.text = self.memeViewModel.getUserName
+            posterUserImageView.kf.setImage(with: memeViewModel.getUserImage)
+            greetings.text = memeViewModel.getUserName
 
     }
     
@@ -47,7 +44,7 @@ extension MemeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemeDescriptionCollectionViewCell", for: indexPath) as? MemeDescriptionCollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCustomCell", for: indexPath) as? MemeDescriptionCollectionViewCell {
             
             let meme = memeViewModel.getMemeListName(position: indexPath.item)
             
@@ -57,5 +54,13 @@ extension MemeViewController: UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+    
+}
+
+extension MemeViewController: UpdateViewMemeDelegate {
+    func updateviewMeme() {
+        memeCollectionView.reloadData()
+    }
+    
     
 }

@@ -6,18 +6,29 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserViewController: UIViewController {
-
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var photoImageView: UIImageView!
+    
     let userViewModel: UserViewModel = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         userViewModel.logoutDelegate = self
+        configureUser()
     }
     
     @IBAction func logoutButtonAction(_ sender: Any) {
         userViewModel.logout()
+    }
+    
+    func configureUser() {
+        nameLabel.text = userViewModel.getName
+        emailLabel.text = userViewModel.getEmail
+        photoImageView.kf.setImage(with: userViewModel.getImage)
     }
     
 }

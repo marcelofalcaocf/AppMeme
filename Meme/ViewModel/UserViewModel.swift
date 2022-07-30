@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseCore
 
 protocol LogoutDelegate {
     func logoutSuccess()
@@ -15,6 +16,25 @@ protocol LogoutDelegate {
 class UserViewModel {
     
     var logoutDelegate: LogoutDelegate?
+    
+    private var user: User? {
+        Auth.auth().currentUser
+    }
+    
+    var getImage: URL? {
+        guard let image = user?.photoURL else { return nil }
+        return image
+    }
+    
+    var getName: String? {
+        guard let name = user?.displayName else { return nil }
+        return "Boas vindas, \(name)!"
+    }
+    
+    var getEmail: String? {
+        guard let email = user?.email else { return nil }
+        return email
+    }
     
     func logout() {
         let firebaseAuth = Auth.auth()

@@ -9,10 +9,15 @@ import Foundation
 import FirebaseAuth
 import FirebaseCore
 
+protocol UpdateViewMemeDelegate {
+    func updateviewMeme()
+}
+
 class MemeViewModel {
     
     private let memeService: ApiMemeService = .init()
     private var memeList: [Memes] = []
+    var delegate: UpdateViewMemeDelegate?
     
     private var user: User? {
         Auth.auth().currentUser
@@ -27,12 +32,12 @@ class MemeViewModel {
         guard let name = user?.displayName else {return nil}
         return "Boas vindas, \(name)!"
     }
-    
-    func getMemes(completion: @escaping () -> Void) {
+
+    func getMemes() {
         memeService.getMemes { meme in
             self.memeList = meme
+            self.delegate?.updateviewMeme()
         }
-            completion()
     }
     
     func getMemeListPosition() -> Int {
@@ -44,13 +49,5 @@ class MemeViewModel {
         
         return meme
     }
-    
-    func handlerUser(completion: @escaping (User?) -> Void) {
-        guard let user = user else { return }
-        
-        completion(user)
-    }
-    
-    
 }
 
