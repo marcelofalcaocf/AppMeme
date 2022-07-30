@@ -7,6 +7,8 @@
 
 import UIKit
 import Kingfisher
+import FirebaseAuth
+import FirebaseCore
 
 class MemeViewController: UIViewController {
     
@@ -18,27 +20,24 @@ class MemeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureUser()
+        Auth.auth().addStateDidChangeListener { auth, user in
+            self.configureUser()
+        }
+        
+        memeViewModel.getMemes {
+            DispatchQueue.main.async {
+                self.memeCollectionView.reloadData()
+            }
+        }
         
         memeCollectionView.dataSource = self
     }
     
     func configureUser() {
-        DispatchQueue.main.async {
             self.posterUserImageView.kf.setImage(with: self.memeViewModel.getUserImage)
             self.greetings.text = self.memeViewModel.getUserName
-        }
+
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }
 
@@ -52,7 +51,7 @@ extension MemeViewController: UICollectionViewDataSource {
             
             let meme = memeViewModel.getMemeListName(position: indexPath.item)
             
-            cell.configureCollectionView(meme: meme)
+            cell.configureCollectionView(memes: meme)
             
             return cell
         }

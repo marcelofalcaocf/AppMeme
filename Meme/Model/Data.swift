@@ -8,5 +8,5 @@
 import Foundation
 
 struct Data: Decodable {
-    let memes: Memes
+    let memes: [Memes]
 }

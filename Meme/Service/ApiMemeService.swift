@@ -10,8 +10,8 @@ import Alamofire
 
 class ApiMemeService {
     
-    func getMeme(completion: @escaping ([Meme]) -> Void) {
-        AF.request("https://imgflip.com/api").responseDecodable(of: Meme.self) {
+    func getMemes(completion: @escaping ([Memes]) -> Void) {
+        AF.request("https://api.imgflip.com/get_memes").responseDecodable(of: Meme.self) {
             response in
             
             let resultOfRequisiton = response.result
@@ -19,9 +19,10 @@ class ApiMemeService {
             switch resultOfRequisiton {
                 
             case .success(let meme):
-                completion([meme])
-            case .failure(_):
-                break
+                completion(meme.data.memes)
+            case .failure(let error):
+                print(error)
+                completion([])
             }
         }
     }

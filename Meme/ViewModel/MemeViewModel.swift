@@ -12,8 +12,11 @@ import FirebaseCore
 class MemeViewModel {
     
     private let memeService: ApiMemeService = .init()
-    private let user = Auth.auth().currentUser
-    private var memeList: [Meme] = []
+    private var memeList: [Memes] = []
+    
+    private var user: User? {
+        Auth.auth().currentUser
+    }
     
     var getUserImage: URL? {
         guard let image = user?.photoURL else { return nil }
@@ -25,17 +28,18 @@ class MemeViewModel {
         return "Boas vindas, \(name)!"
     }
     
-    func getMemeService() {
-        memeService.getMeme { meme in
+    func getMemes(completion: @escaping () -> Void) {
+        memeService.getMemes { meme in
             self.memeList = meme
         }
+            completion()
     }
     
     func getMemeListPosition() -> Int {
         memeList.count
     }
     
-    func getMemeListName(position: Int) -> Meme {
+    func getMemeListName(position: Int) -> Memes {
         let meme = memeList[position]
         
         return meme
@@ -46,5 +50,7 @@ class MemeViewModel {
         
         completion(user)
     }
+    
+    
 }
 
